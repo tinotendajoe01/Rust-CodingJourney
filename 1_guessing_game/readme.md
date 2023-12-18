@@ -1,4 +1,3 @@
-````markdown
 # Rust Guessing Game
 
 This simple guessing game is written in Rust. It generates a random number between 1 and 100 (inclusive) and prompts the user to guess the correct number. The user is provided with feedback on whether their guess is too small, too big, or correct.
@@ -37,7 +36,6 @@ In Rust, `::` is used to access items (functions, traits, types, etc.) defined w
 ```rust
 use std::cmp::Ordering;
 ```
-````
 
 Here, `std` is a standard library module, and we're using `cmp` module inside it. `Ordering` is an enumeration (a set of named values) used for comparisons.
 
