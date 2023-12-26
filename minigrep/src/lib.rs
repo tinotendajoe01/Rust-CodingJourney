@@ -1,4 +1,6 @@
+use regex::Regex;
 use std::error::Error;
+
 use std::{env, fs};
 pub struct Config {
     pub query: String,
@@ -38,6 +40,10 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
 
     Ok(())
 }
+pub fn search_with_regex<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
+    let re = Regex::new(query).unwrap();
+    contents.lines().filter(|line| re.is_match(line)).collect()
+}
 
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     let mut results = Vec::new();
@@ -61,6 +67,30 @@ pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a st
         }
     }
 
+    results
+}
+
+pub fn search_with_context<'a>(
+    query: &str,
+    contents: &'a str,
+    context_lines: usize,
+) -> Vec<String> {
+    let mut results = Vec::new();
+    let lines: Vec<&str> = contents.lines().collect();
+
+    for (i, line) in lines.iter().enumerate() {
+        if line.contains(query) {
+            let start = if i >= context_lines {
+                i - context_lines
+            } else {
+                0
+            };
+            let end = usize::min(i + context_lines + 1, lines.len());
+
+            let context: String = lines[start..end].join("\n");
+            results.push(context);
+        }
+    }
     results
 }
 
