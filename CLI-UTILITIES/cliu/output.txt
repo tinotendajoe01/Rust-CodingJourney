@@ -1,0 +1,29 @@
+192.168.1.1 - - [12/Dec/2023:08:46:03 +0000] " (in logs.txt): [32mGET[0m /api/users HTTP/1.1" 200 532 "-" "Mozilla/5.0..."
+192.168.1.2 - - [12/Dec/2023:08:47:10 +0000] " (in logs.txt): [32mGET[0m /api/products HTTP/1.1" 404 182 "-" "Mozilla/5.0..."
+192.168.1.4 - - [12/Dec/2023:08:49:20 +0000] " (in logs.txt): [32mGET[0m /api/orders HTTP/1.1" 200 341 "-" "Mozilla/5.0..."
+192.168.1.6 - - [12/Dec/2023:08:52:45 +0000] " (in logs.txt): [32mGET[0m /api/carts HTTP/1.1" 500 415 "-" "Mozilla/5.0..."
+192.168.1.10 - - [27/Dec/2023:10:15:31 +0000] " (in logs2.txt): [32mGET[0m /api/users HTTP/1.1" 200 214 "http://example.com/start" "Mozilla/5.0..."
+192.168.1.12 - - [27/Dec/2023:10:17:58 +0000] " (in logs2.txt): [32mGET[0m /api/products HTTP/1.1" 404 102 "http://example.com/products" "Mozilla/5.0..."
+192.168.1.13 - - [27/Dec/2023:10:19:04 +0000] " (in logs2.txt): [32mGET[0m /home HTTP/1.1" 200 356 "http://example.com/" "Mozilla/5.0..."
+192.168.1.16 - - [27/Dec/2023:10:23:51 +0000] " (in logs2.txt): [32mGET[0m /api/orders HTTP/1.1" 500 305 "http://example.com/orders" "Mozilla/5.0..."
+192.168.1.18 - - [27/Dec/2023:10:26:17 +0000] " (in logs2.txt): [32mGET[0m /api/cart HTTP/1.1" 200 259 "http://example.com/shopping-cart" "Mozilla/5.0..."
+1.  (in logs2.txt): [32mGet[0mting Started
+    Finished dev [unoptimized + debuginfo] tar (in logs2.txt): [32mget[0m(s) in 0.61s
+     Running `tar (in logs2.txt): [32mget[0m/debug/minigrep`
+    "tar (in logs2.txt): [32mget[0m/debug/minigrep",
+    Finished dev [unoptimized + debuginfo] tar (in logs2.txt): [32mget[0m(s) in 1.57s
+     Running `tar (in logs2.txt): [32mget[0m/debug/minigrep needle haystack`
+    "tar (in logs2.txt): [32mget[0m/debug/minigrep",
+Notice that the first value in the vector is "tar (in logs2.txt): [32mget[0m/debug/minigrep", which is the name of our binary. This matches the behavior of the arguments list in C, letting programs use the name by which they were invoked in their execution. It’s often convenient to have access to the program name in case you want to print it in messages or change behavior of the program based on what command line alias was used to invoke the program. But for the purposes of this chapter, we’ll ignore it and save only the two arguments we need.
+    Finished dev [unoptimized + debuginfo] tar (in logs2.txt): [32mget[0m(s) in 0.0s
+     Running `tar (in logs2.txt): [32mget[0m/debug/minigrep test sample.txt`
+1.  (in logs2.txt): [32mGet[0mting Started
+    Finished dev [unoptimized + debuginfo] tar (in logs2.txt): [32mget[0m(s) in 0.61s
+     Running `tar (in logs2.txt): [32mget[0m/debug/minigrep`
+    "tar (in logs2.txt): [32mget[0m/debug/minigrep",
+    Finished dev [unoptimized + debuginfo] tar (in logs2.txt): [32mget[0m(s) in 1.57s
+     Running `tar (in logs2.txt): [32mget[0m/debug/minigrep needle haystack`
+    "tar (in logs2.txt): [32mget[0m/debug/minigrep",
+Notice that the first value in the vector is "tar (in logs2.txt): [32mget[0m/debug/minigrep", which is the name of our binary. This matches the behavior of the arguments list in C, letting programs use the name by which they were invoked in their execution. It’s often convenient to have access to the program name in case you want to print it in messages or change behavior of the program based on what command line alias was used to invoke the program. But for the purposes of this chapter, we’ll ignore it and save only the two arguments we need.
+    Finished dev [unoptimized + debuginfo] tar (in logs2.txt): [32mget[0m(s) in 0.0s
+     Running `tar (in logs2.txt): [32mget[0m/debug/minigrep test sample.txt`
